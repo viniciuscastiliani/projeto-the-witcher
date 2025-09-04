@@ -14,16 +14,16 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
 }
 
 header {
     background-color: black;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 header > img {
@@ -33,17 +33,19 @@ header > img {
 header > p {
     font-family: 'Mason';
     color: #d1bc84;
-    text-align: center;
     padding: 10px;
 }
 
 span#burger {
+    display: block;
     background-color: #d1bc84;
     color: black;
-    display: flex;
-    text-align: center;
     padding: 10px;
     cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    user-select: none;
 }
 
 span#burger:hover {
@@ -51,38 +53,43 @@ span#burger:hover {
     color: #d1bc84;
 }
 
-menu {
-    display: flex;
-    text-align: center;
-    padding: 20px;
-}
-
-header > menu {
+nav#itens {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
     background-color: #d1bc84;
-    padding: 20px;
-    width: 100vw;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+    width: 100%;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
 }
 
-header > menu > ul {
-    list-style-type: none;
+nav#itens.ativo {
+    max-height: 500px;
+    opacity: 1;
+    padding: 10px 0;
 }
 
-header > menu > ul > li {
-    padding: 5px;
+nav#itens ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-header > menu > ul > li > a {
+nav#itens li {
+    margin: 10px 0;
+}
+
+nav#itens a {
     background-color: black;
     color: white;
-    padding: 10px;
-    margin: 5px;
+    padding: 10px 15px;
     text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background 0.3s;
 }
 
-menu > ul > li a:hover {
+nav#itens a:hover {
     background-color: gray;
 }
 
@@ -99,3 +106,4 @@ main > p {
     text-align: justify;
     text-indent: 20px;
 }
+

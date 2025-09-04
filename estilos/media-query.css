@@ -1,19 +1,30 @@
 @charset "UTF-8";
 
+/* Estilo para telas maiores */
 @media screen and (min-width: 768px) {
     span#burger {
-        display: flex;
+        display: none; /* Esconde o hamburger */
     }
 
-    menu {
-        display: flex;
+    nav#itens {
+        max-height: none !important;
+        opacity: 1 !important;
+        display: flex !important;
+        justify-content: center;
+        padding: 10px 0;
     }
 
-    menu > ul > li {
+    nav#itens ul {
         display: flex;
+        gap: 15px;
+    }
+
+    nav#itens li {
+        margin: 0;
     }
 
     main {
         width: 768px;
+        margin: 20px auto;
     }
 }
